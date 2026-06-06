@@ -1,0 +1,488 @@
+<DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACDC - Acción Ciudadana por la Democracia y la Cultura</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(180,0,0,.65),rgba(100,0,0,.95)),
+    url("https://www.elplural.com/uploads/s1/58/61/46/fotonoticia-20181011125257-1920.jpeg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:40px;
+}
+
+.hero img{
+    width:220px;
+    max-width:80%;
+    margin-bottom:25px;
+    filter:drop-shadow(0 0 20px rgba(255,255,255,.3));
+}
+
+.hero h1{
+    font-size:clamp(2.5rem,5vw,5rem);
+    max-width:1200px;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.hero p{
+    font-size:1.5rem;
+    margin-top:20px;
+}
+
+.vota{
+    font-size:clamp(3rem,7vw,7rem);
+    font-weight:900;
+    color:#ffd700;
+    margin-top:30px;
+    text-shadow:0 0 20px rgba(255,215,0,.7);
+}
+
+.boton{
+    margin-top:35px;
+    display:inline-block;
+    text-decoration:none;
+    color:#b30000;
+    background:white;
+    padding:18px 40px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.boton:hover{
+    transform:scale(1.05);
+}
+
+/* NAV */
+
+nav{
+    background:#7d0000;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    list-style:none;
+}
+
+nav a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:20px;
+    font-weight:600;
+}
+
+nav a:hover{
+    background:#a00000;
+}
+
+/* SECCIONES */
+
+section{
+    max-width:1300px;
+    margin:auto;
+    padding:70px 30px;
+}
+
+.titulo{
+    text-align:center;
+    color:#b00000;
+    margin-bottom:40px;
+    font-size:2.5rem;
+    font-weight:900;
+}
+
+.presentacion{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    font-size:1.1rem;
+}
+
+/* EQUIPO */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    border-top:8px solid #c00000;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#b00000;
+    margin-bottom:10px;
+}
+
+/* MINISTERIOS */
+
+.ministerio{
+    background:white;
+    margin-bottom:40px;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.ministerio h3{
+    color:#b00000;
+    margin-bottom:20px;
+    font-size:1.6rem;
+}
+
+.ministerio h4{
+    color:#7d0000;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.ministerio ul{
+    padding-left:25px;
+}
+
+.ministerio li{
+    margin-bottom:8px;
+}
+
+/* ESTADÍSTICAS */
+
+.estadisticas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.numero{
+    background:#c00000;
+    color:white;
+    text-align:center;
+    padding:35px;
+    border-radius:20px;
+}
+
+.numero h2{
+    font-size:3rem;
+}
+
+/* WEBGRAFÍA */
+
+.webgrafia{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.webgrafia li{
+    margin-bottom:15px;
+}
+
+.webgrafia a{
+    color:#0066cc;
+}
+
+/* FOOTER */
+
+footer{
+    background:#700000;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer h2{
+    margin-bottom:10px;
+}
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+
+<img src="ACDC.png" alt="Logo ACDC">
+
+<h1>
+Acción Ciudadana por la Democracia y la Cultura
+</h1>
+
+<p>
+Tu voz, tu voto: tu futuro.
+</p>
+
+<div class="vota">
+¡VOTA ACDC!
+</div>
+
+<a href="#programa" class="boton">
+Conoce nuestro programa
+</a>
+
+</header>
+
+<nav>
+<ul>
+<li><a href="#equipo">Equipo</a></li>
+<li><a href="#presentacion">Presentación</a></li>
+<li><a href="#programa">Programa</a></li>
+</ul>
+</nav>
+
+<section id="equipo">
+
+<h2 class="titulo">Equipo de Gobierno</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Miguel Ojeda</h3>
+<p>Presidente de ACDC</p>
+</div>
+
+<div class="card">
+<h3>Alejandro Boza</h3>
+<p>Ministro de Igualdad e Interculturalidad</p>
+</div>
+
+<div class="card">
+<h3>Sofía Cachada</h3>
+<p>Ministra de Economía, Comercio y Empresa</p>
+</div>
+
+<div class="card">
+<h3>Alejandro Galán</h3>
+<p>Ministro de Demografía y Aspectos Rurales y Urbanos</p>
+</div>
+
+<div class="card">
+<h3>Carolina Valencia</h3>
+<p>Ministra de Ecología y Medio Ambiente</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="presentacion">
+
+<h2 class="titulo">Nuestra Visión</h2>
+
+<div class="presentacion">
+
+<p>
+En España siguen existiendo desigualdades, problemas económicos,
+contaminación ambiental y dificultades para acceder a oportunidades.
+ACDC nace con el objetivo de afrontar estos desafíos mediante la
+democracia, el diálogo, el respeto, la cooperación y la cultura.
+Creemos en una sociedad más justa, sostenible y preparada para el futuro.
+</p>
+
+<div class="estadisticas">
+
+<div class="numero">
+<h2>5</h2>
+<p>Ministerios</p>
+</div>
+
+<div class="numero">
+<h2>100%</h2>
+<p>Compromiso Democrático</p>
+</div>
+
+<div class="numero">
+<h2>1</h2>
+<p>Objetivo: Mejorar España</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="programa">
+
+<h2 class="titulo">Programa Electoral</h2>
+
+<div class="ministerio">
+
+<h3>Igualdad e Interculturalidad — Alejandro Boza</h3>
+
+<h4>Problemas</h4>
+
+<ul>
+<li>Feminización de la pobreza.</li>
+<li>Violencia de género.</li>
+<li>Discriminación laboral.</li>
+<li>Prejuicios sociales.</li>
+<li>Choque de costumbres.</li>
+<li>Dificultades de integración.</li>
+</ul>
+
+<h4>Soluciones</h4>
+
+<ul>
+<li>Campañas de sensibilización.</li>
+<li>Festividades inclusivas.</li>
+<li>Programas de inclusión social.</li>
+<li>Mayor control laboral.</li>
+<li>Conferencias de concienciación.</li>
+</ul>
+
+</div>
+
+<div class="ministerio">
+
+<h3>Economía, Comercio y Empresa — Sofía Cachada</h3>
+
+<h4>Problemas</h4>
+
+<ul>
+<li>Inflación.</li>
+<li>Especulación inmobiliaria.</li>
+<li>Dificultad de acceso a la vivienda.</li>
+<li>Precariedad laboral.</li>
+<li>Burocracia excesiva.</li>
+<li>Fuga de talento.</li>
+</ul>
+
+<h4>Soluciones</h4>
+
+<ul>
+<li>Programa de viviendas para estudiantes destacados.</li>
+<li>Límite a la acumulación especulativa de viviendas.</li>
+<li>Ayudas económicas.</li>
+<li>Viviendas más asequibles.</li>
+<li>Más empleo estable.</li>
+<li>Trámites simplificados.</li>
+<li>Impulso al emprendimiento juvenil.</li>
+</ul>
+
+</div>
+
+<div class="ministerio">
+
+<h3>Demografía y Aspectos Rurales y Urbanos — Alejandro Galán</h3>
+
+<h4>Problemas</h4>
+
+<ul>
+<li>Baja natalidad.</li>
+<li>Envejecimiento poblacional.</li>
+<li>Despoblación rural.</li>
+<li>Emigración de jóvenes cualificados.</li>
+</ul>
+
+<h4>Soluciones</h4>
+
+<ul>
+<li>Ayudas económicas por hijo.</li>
+<li>Guarderías asequibles.</li>
+<li>Permisos familiares ampliados.</li>
+<li>Facilitar el acceso a la vivienda.</li>
+<li>Inmigración legal e integrada.</li>
+<li>Mejor internet y transporte rural.</li>
+<li>Más inversión en I+D.</li>
+</ul>
+
+</div>
+
+<div class="ministerio">
+
+<h3>Ecología y Medio Ambiente — Carolina Valencia</h3>
+
+<h4>Problemas</h4>
+
+<ul>
+<li>Contaminación del agua.</li>
+<li>Cambio climático.</li>
+<li>Falta de conciencia ambiental.</li>
+<li>Incendios forestales.</li>
+<li>Escasez de agua.</li>
+</ul>
+
+<h4>Soluciones</h4>
+
+<ul>
+<li>Multas más estrictas.</li>
+<li>Más controles ambientales.</li>
+<li>Fomento del transporte público.</li>
+<li>Impulso a energías renovables.</li>
+<li>Educación ambiental.</li>
+<li>Mayor vigilancia forestal.</li>
+</ul>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<h2>ACDC</h2>
+
+<p>
+Acción Ciudadana por la Democracia y la Cultura
+</p>
+
+<p>
+Tu voz, tu voto: tu futuro.
+</p>
+
+</footer>
+
+</body>
+</html>
